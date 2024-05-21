@@ -16,5 +16,10 @@ public class EnemyMove : MonoBehaviour
     void Update()
     {
         tr.Translate(Vector2.left * speed * Time.deltaTime);
+        if (Time.deltaTime > 30)
+        {
+            tr.Translate(Vector2.left * speed); 
+        }
+
     }
 }
