@@ -16,7 +16,10 @@ public class AttackEnemy : MonoBehaviour
             {
                 if (hit.collider.tag == "enemy")
                 {
+
+                    GetComponent<AudioSource>().Play();
                     Destroy(hit.collider.gameObject);
+                 
                 }
             }
         }
