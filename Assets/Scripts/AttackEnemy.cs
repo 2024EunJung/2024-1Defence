@@ -17,6 +17,7 @@ public class AttackEnemy : MonoBehaviour
                 if (hit.collider.tag == "enemy")
                 {
                     Destroy(hit.collider.gameObject);
+                    Upgrade.kill += 1;
                 }
             }
         }
