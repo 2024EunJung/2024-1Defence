@@ -22,7 +22,7 @@ public class Upgrade : MonoBehaviour
         if (level == 1)
         {
             int remain = 15 - kill;
-            upgradeText.text = "업그레이드까지 :" + remain;
+            upgradeText.text = "레벨 2 까지 :" + remain;
             if (remain <= 0) 
             { 
                 level = 2; 
@@ -31,8 +31,8 @@ public class Upgrade : MonoBehaviour
         }
         else if (level == 2)
         {
-            int remain = 25 - kill;
-            upgradeText.text = "업그레이드까지 :" + remain;
+            int remain = 40 - kill;
+            upgradeText.text = "레벨 3 까지 :" + remain;
             if (remain <= 0)
             {
                 level = 3;
@@ -41,8 +41,8 @@ public class Upgrade : MonoBehaviour
         }
         else if (level == 3)
         {
-            int remain = 35 - kill;
-            upgradeText.text = "업그레이드까지 :" + remain;
+            int remain = 80 - kill;
+            upgradeText.text = "레벨 4 까지 :" + remain;
             if (remain <= 0)
             {
                 level = 4;
