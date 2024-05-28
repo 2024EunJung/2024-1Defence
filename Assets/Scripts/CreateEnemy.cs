@@ -9,7 +9,7 @@ public class CreateEnemy : MonoBehaviour
     public Vector2 limitMax;
     private float delay;
     private int count;
-
+    public float Min;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +34,10 @@ public class CreateEnemy : MonoBehaviour
             Instantiate(prefabEnemy, creatingPoint, Quaternion.identity);
 
             delay = 10.0f / (count + 4);
+            if(delay < Min)
+            {
+                delay = Min;
+            }
             yield return new WaitForSeconds(delay);
         }
     }

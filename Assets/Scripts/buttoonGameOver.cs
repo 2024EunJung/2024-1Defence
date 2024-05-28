@@ -8,15 +8,27 @@ public class buttoonGameOver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        pause.IsPause = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+     
+      
+    }
+    public void buttonClik()
+    {
+        SceneManager.LoadScene("gamestart");
+    }
+    public void Stopped()
+    {
+        if (pause.IsPause == false)
         {
-            SceneManager.LoadScene("gamestart");
+            Time.timeScale = 0;
+            pause.IsPause = true;
+            return;
         }
+
     }
 }
