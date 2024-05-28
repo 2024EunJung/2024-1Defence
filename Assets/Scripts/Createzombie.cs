@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class CreateEnemy : MonoBehaviour
+public class Createzombie : MonoBehaviour
 {
-    public GameObject prefabEnemy;
+    public GameObject prefabzombie;
 
     public Vector2 limitMin;
     public Vector2 limitMax;
@@ -14,8 +14,7 @@ public class CreateEnemy : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        
+    {   
         StartCoroutine(Create());
     }
 
@@ -34,9 +33,9 @@ public class CreateEnemy : MonoBehaviour
             float r = Random.Range(limitMin.y, limitMax.y);
             Vector2 creatingPoint = new Vector2(limitMin.x, r);
 
-            Instantiate(prefabEnemy, creatingPoint, Quaternion.identity);
+            Instantiate(prefabzombie, creatingPoint, Quaternion.identity);
 
-            delay = 10.0f / (count + 4);
+            delay = 10.0f / (count =1);
             yield return new WaitForSeconds(delay);
         }
     }
