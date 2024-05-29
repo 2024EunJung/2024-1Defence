@@ -23,7 +23,7 @@ public class Castle : MonoBehaviour
     {
         if(GuageBar.fillAmount <= 0)
         {
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("gameover");
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
