@@ -9,12 +9,16 @@ using UnityEngine;
 public class CreaateTop : MonoBehaviour
 {
     public GameObject prefabTop;
+    public GameObject prefabTop1;
+    public GameObject prefabTop2;
     public static int top = 0;
 
     public Vector2 limitMin;
     public Vector2 limitMax;
 
     private float delay;
+
+    SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -38,14 +42,27 @@ public class CreaateTop : MonoBehaviour
                 Vector2 creatingPoint = new Vector2(a, r);
                 Upgrade.kill -= 10;
 
-                Instantiate(prefabTop, creatingPoint, Quaternion.identity);
+                if (Upgrade.level == 2 || Upgrade.level == 1)
+                {
+                    Instantiate(prefabTop, creatingPoint, Quaternion.identity);
+                }
+                else if (Upgrade.level == 3)
+                {
+                    Instantiate(prefabTop1, creatingPoint, Quaternion.identity);
+                }
+                else if (Upgrade.level == 4)
+                {
+                    Instantiate(prefabTop2, creatingPoint, Quaternion.identity);
+                }
                 delay = 0.5f;
             }
 
             if (Input.GetKey(KeyCode.K) == true)
             {
-                Upgrade.kill += 1;
+                Upgrade.kill += 5;
+                delay = 0.1f;
             }
+
             yield return new WaitForSeconds(delay);
         }
     }
