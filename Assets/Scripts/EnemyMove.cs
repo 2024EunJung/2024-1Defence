@@ -17,4 +17,11 @@ public class EnemyMove : MonoBehaviour
     {
         tr.Translate(Vector2.left * speed * Time.deltaTime);
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(gameObject);
+        Destroy(collision.gameObject);
+        Upgrade.kill += 1;
+    }
 }
